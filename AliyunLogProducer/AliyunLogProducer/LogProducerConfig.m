@@ -168,6 +168,12 @@ unsigned int time_func(){
     log_producer_config_set_topic(config, topicChar);
 }
 
+- (void)SetSource:(NSString *)source
+{
+    const char *sourceChar=[source UTF8String];
+    log_producer_config_set_source(config, sourceChar);
+}
+
 - (void)AddTag:(NSString *) key value:(NSString *)value
 {
     const char *keyChar=[key UTF8String];
